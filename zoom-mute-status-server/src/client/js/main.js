@@ -21,14 +21,31 @@ $('#info-open').modaal({
     content_source: '#info'
 })
 
+var params = (new URL(document.location)).searchParams;
+if (params.get('ws-addr') != null) {
+    $('#server-info').hide()
+}
+
 $('#connect-btn').click(() => {
     $('#config-open').modaal('close')
     audioMuteIcon.show()
     videoMuteIcon.show()
 
-    let serverIP = $('#server-ip').val()
-    console.log(serverIP)
-    ws = new WebSocket(`ws:${serverIP}:31497`)
+    let serverIP
+    if (params.get('ws-addr')) {
+        serverIP = params.get('ws-addr')
+    } else {
+        serverIP = $('#server-ip').val()
+    }
+
+    let wsPort
+    if (params.get('ws-port')) {
+        wsPort = params.get('ws-port')
+    } else {
+        wsPort = '31497'
+    }
+
+    ws = new WebSocket(`ws:${serverIP}:${wsPort}`)
 
     ws.addEventListener('open', (e) => {
         console.log('ws opened')

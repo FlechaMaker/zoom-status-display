@@ -2,7 +2,7 @@
   "name": "zoom-mute-status-server",
   "productName": "zoom-mute-status-server",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "",
   "main": "src/main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -50,6 +50,8 @@
     "electron-squirrel-startup": "^1.0.0",
     "ip": "^1.1.5",
     "menubar": "^9.0.2",
+    "node-static": "^0.7.11",
+    "qrcode": "^1.4.4",
     "ws": "^7.4.2"
   },
   "devDependencies": {

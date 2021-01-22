@@ -58,3 +58,18 @@ ipcMain.on('status-changed', (event, zoomStatus) => {
 let intervalID = setInterval(() => {
   mb.window.webContents.send('status-check')
 }, 500)
+
+// serve client web page
+const nodeStatic = require('node-static')
+const { request } = require('http')
+const clientFile = new nodeStatic.Server(`${appPath}/src/client`)
+
+require('http').createServer((request, response) => {
+  request.addListener('end', () => {
+    switch(request.method) {
+      case 'GET':
+        clientFile.serve(request, response)
+        break
+    }
+  }).resume()
+}).listen(31496, "0.0.0.0")
