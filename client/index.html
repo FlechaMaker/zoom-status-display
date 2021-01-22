@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Zoom status display</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/modaal@0.4.4/dist/css/modaal.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="status-wrapper" id="status">
+        <div class="status-display" id="audio-status">
+            <img src="imgs/mic_off-24px.svg" class="status-icon" id="audio-mute-icon" />
+            <img src="imgs/mic-24px.svg" class="status-icon" id="audio-unmute-icon" />
+        </div>
+        <div class="status-display" id="video-status">
+            <img src="imgs/videocam_off-24px.svg" class="status-icon" id="video-mute-icon" />
+            <img src="imgs/videocam-24px.svg" class="status-icon" id="video-unmute-icon" />
+        </div>
+    </div>
+    <div class="controls-wrapper">
+        <button id="config-open" class="btn" style="display: none;">
+            <img src="imgs/settings-24px.svg">
+        </button>
+        <button id="info-open" class="btn">
+            <img src="imgs/info-24px.svg">
+        </button>
+    </div>
+    <div id="config" style="display: none;">
+        <label for="server-ip">Enter Mac's IP address</label>
+        <input type="text" value="" pattern="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}" placeholder="000.000.000.000" class="input" id="server-ip" required />
+        <button id="connect-btn" class="btn">Connect</button>
+        <p>Note: Browser shows speaker icon but NO sound will be played. This is for preventing devices's sleep.</p>
+    </div>
+    <div id="info" style="display:none;">
+        <p>Copyright Yuchi Yahagi. Licensed under the MIT license.</p>
+        <p><a href="https://github.com/FlechaMaker/zoom-status-display">GitHub repository</a></p>
+        <h1>Acknowledgements</h1>
+        <p><a href="https://github.com/humaan/Modaal">Modaal</a> by Humaan is licensed under the MIT license.</p>
+        <p><a href="https://github.com/richtr/NoSleep.js/">NoSleep.js</a> by Rich Tibbett is licensed under the MIT license.</p>
+        <p><a href="https://material.io/resources/icons/?style=baseline">Material icons</a> icons by Google is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache license version 2.0</a>.</p>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/modaal@0.4.4/dist/js/modaal.min.js"></script>
+    <script type="text/javascript" src="js/NoSleep.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
