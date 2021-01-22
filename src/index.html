@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Zoom status display</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<body style="background: white;">
+    <dl>
+        <dt>Scan QR code to open client</dt>
+        <dd><canvas id="qrcode"></canvas></dd>
+        <dt>IP address (enter this if client require)</dt>
+        <dd id="ip-addr"></dd>
+        <dt>Audio</dt>
+        <dd id="audio-status"></dd>
+        <dt>Video</dt>
+        <dd id="video-status"></dd>
+    </dl>
+    <button id="quit-btn">Quit</button>
+    <script type="text/javascript" src="renderer.js"></script>
+</body>
+</html>
