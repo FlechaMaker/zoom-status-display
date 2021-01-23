@@ -46,7 +46,7 @@ wss.on('connection', (ws_) => {
     console.log(`received: ${message}`)
   })
   wsConnected = true;
-  mb.window.webContents.send('status-check')
+  mb.window.webContents.send('status-check', true)
 })
 
 ipcMain.on('status-changed', (event, zoomStatus) => {
@@ -56,7 +56,7 @@ ipcMain.on('status-changed', (event, zoomStatus) => {
 })
 
 let intervalID = setInterval(() => {
-  mb.window.webContents.send('status-check')
+  mb.window.webContents.send('status-check', false)
 }, 500)
 
 // serve client web page

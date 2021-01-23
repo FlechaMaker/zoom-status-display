@@ -16,11 +16,11 @@ document.getElementById('quit-btn').addEventListener('click', () => {
 let audioStatus, videoStatus;
 
 // main.js send status-check periodically
-ipcRenderer.on('status-check', () => {
+ipcRenderer.on('status-check', (event, forceSend) => {
     let ret = execSync(`osascript "${appPath}/src/zoom-mute-status.scpt"`)
     let zoomStatus = JSON.parse(ret.toString())
 
-    if (audioStatus != zoomStatus["audio"] || videoStatus != zoomStatus["video"]) {
+    if (forceSend || audioStatus != zoomStatus["audio"] || videoStatus != zoomStatus["video"]) {
         let audioStatusText = document.getElementById("audio-status")
         audioStatusText.innerText = zoomStatus["audio"]
         let videoStatusText = document.getElementById("video-status")
