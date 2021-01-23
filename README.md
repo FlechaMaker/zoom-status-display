@@ -13,5 +13,5 @@ Display your Zoom's mute/unmute status on other devices such as smartphone and t
 ## How to use
 
 1. Launch zoom-mute-status-server
-2. Click the icon in your menubar
+2. Click the icon ![Icon](src/IconTemplate.png) in your menubar
 3. Scan QR code to access client page
