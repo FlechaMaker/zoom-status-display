@@ -1,7 +1,7 @@
 {
   "name": "zoom-mute-status-server",
   "productName": "zoom-mute-status-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "src/main.js",
   "scripts": {
